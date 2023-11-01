@@ -2,6 +2,7 @@ import './productsList.scss';
 import Product from '../Product/Product';
 
 function ProductsList({products}) {
+  console.log(products);
   return (
     <div className="product-lists grid bg-whitesmoke my-3">
         {
@@ -10,6 +11,7 @@ function ProductsList({products}) {
 
             return (
               <Product key={product.id} product={{...product, discount}} />
+              
             )
           })
 
