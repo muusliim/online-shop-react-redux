@@ -1,8 +1,10 @@
 @import '../../App.scss';
 
 .slider-item{
-    max-height: 350px;
+    max-height: 380px;
     border: none;
+    width: 100%;
+    object-fit: fill;
 }
 .slider-content{
     overflow-y: hidden;

@@ -9,10 +9,10 @@
     .category{
         position: absolute;
         left: -5px;
-        top: 1.6rem;
+        top: 1.8rem;
         background-color: $clr-orange;
         color: $clr-white;
-        font-size: 13px;
+        font-size: 14px;
         text-transform: capitalize;
         padding: 0.2rem 1rem;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -24,8 +24,8 @@
             top: 100%;
             transform: translateY(-5px);
             width: 0;
-            height: 0;
-            border-top: 5px solid transparent;
+            height: 5px;
+            border-top: 5px solid $clr-orange;
             border-bottom: 5px solid transparent;
             border-right: 5px solid $clr-orange;
         }

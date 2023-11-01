@@ -10,6 +10,18 @@ function HomePage() {
   const { data: products = [], isLoading, isFetching } = useGetProductsQuery(30);
   const {data: singleProduct = [], isLoading: isProductLoading, isFetching: isProductFetching} = useGetSingleProductQuery;
 
+  const rndProducts = [];
+
+  console.log(products?.products?.length);
+
+  // if(products.products.length > 0) {
+  //   products.products.map((_, i) => {
+  //     let randomIndex = Math.floor(Math.random() * products.products.length);
+  //     rndProducts[i] = products[randomIndex]
+  //   })      
+  // }
+
+  console.log(rndProducts);
   return (
     <main>
       <div className="slider-wrapper">
