@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSidebarStatus, setSidebarOff } from '../../app/store/sidebar-slice';
 import { useGetCategoriesQuery } from '../../app/api/apiSlice';
-import Spinner from '../Spinner/Spinner';
+import {  SpinnerIcon } from '../Spinner/Spinner';
 
 function Sidebar() {
     const dispatch = useDispatch();
@@ -26,14 +26,14 @@ function Sidebar() {
                         Все категории
                 </div>
                 <ul className="cat-list">
-                    {isFetching || isLoading ? <Spinner/> :
+                    {isFetching || isLoading ? <SpinnerIcon/> :
                         categories.map((category, i) => {
                             return (
                              <li key={i} >
                                 <Link to={`category/${category}`}
                                     className='cat-list-link text-capitalize'
                                 >
-                                    {category}
+                                    {category.replace('-', ' ')}
                                 </Link>
                              </li>
                             )

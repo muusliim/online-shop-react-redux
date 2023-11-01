@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setSidebarOn } from '../../../app/store/sidebar-slice';
 import { useGetCategoriesQuery } from '../../../app/api/apiSlice';
-import Spinner from '../../Spinner/Spinner';
+import { SpinnerIcon } from '../../Spinner/Spinner';
 
 
 function Navbar() {
@@ -42,13 +42,13 @@ function Navbar() {
                 </div>
 
                 <ul className='navbar-nav flex align-center fs-12 fw-4 font-manrope'>
-                   { isFetching || isLoading ? <Spinner/> :
+                   { isFetching || isLoading ? <SpinnerIcon/> :
                     categories.slice(0, 8).map((item, i) => {
                         return <li className='nav-item no-wrap text-capitalize' key={i}>
                             <Link to={`category/${item}`}
                                 className='nav-link hover-underline-animation'
                                 >
-                                    {item}
+                                    {item.replace('-', ' ')}
                             </Link>
                         </li>
                     })
