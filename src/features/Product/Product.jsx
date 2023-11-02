@@ -22,11 +22,11 @@ function Product({product}) {
                     <span className="old-price">
                         {price(product?.price)}
                     </span>
-                    <span className="new-price">
+                    <span className="new-price ">
                         {price(product?.discount)}
                     </span>
-                    <div className="discount fw-6">
-                        ({product?.discountedPercentage}% OFF)
+                    <div className="discount fw-6 fs-12">
+                        {product?.discountedPercentage}% OFF
                     </div>
                 </div>
             </div>
