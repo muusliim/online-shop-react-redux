@@ -2,7 +2,7 @@
 
 .header{
     background: rgb(26, 8, 113);
-    background: linear-gradient(180deg, rgb(229, 90, 10) 0%, rgb(60, 49, 26) 100%);
+    background: linear-gradient(180deg, $clr-orange 0%, rgb(148, 83, 39) 100%);
     &-cnt-top{
         border-bottom: 1px solid lighten($clr-orange, 30%)
     }

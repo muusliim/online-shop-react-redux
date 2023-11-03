@@ -1,4 +1,4 @@
-@import '../../App.scss';
+@import "../../App.scss";
 
 .product-single{
     .product-single-content{
@@ -8,6 +8,8 @@
         @media screen and (min-width: 768px){
             grid-template-columns: repeat(2, 1fr);
             column-gap: 4rem;
+            padding: 0px;
+
         }
 
         .product-single-l{
@@ -109,6 +111,9 @@
                     
                 }
                 .btns{
+                    @media screen and (max-width:452px) {
+                        display: flex;
+                    }
                     .btn{
                         height: 46px;
                         font-size: 15px;
@@ -128,7 +133,7 @@
                             color: white;
                         }
                         &:hover{
-                            opacity: 0.9;
+                            opacity: 0.7;
                         }
                     }
                 }

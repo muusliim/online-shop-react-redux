@@ -24,7 +24,6 @@ function HomePage() {
 
   }
   return (
-    <> 
     <main>
       <div className="slider-wrapper">
         <HeaderSlider/>
@@ -57,8 +56,6 @@ function HomePage() {
         </div>
       </div>
     </main>
-      <Footer/>
-    </>
   )
 }
 

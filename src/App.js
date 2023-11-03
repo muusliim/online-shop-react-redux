@@ -4,6 +4,7 @@ import Header from './features/Header/Header/Header';
 import Sidebar from './features/Sidebar/Sidebar';
 import HomePage from './pages/HomePage/HomePage';
 import ProductSinglePage from './pages/ProductSInglePage/ProductSinglePage';
+import Footer from './features/Footer/Footer';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path='/' element={<HomePage/>} />
         <Route path='product/:id' element={<ProductSinglePage/>}/>
       </Routes>
-
+      <Footer/>
       </Router>
     </div>
   )
