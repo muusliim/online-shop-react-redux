@@ -1,13 +1,24 @@
 import './navbar.scss';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setSidebarOn } from '../../../app/store/sidebar-slice';
 import { useGetCategoriesQuery } from '../../../app/api/apiSlice';
 import { SpinnerIcon } from '../../Spinner/Spinner';
+import { getCartItemsCount, getCartSelector, getCartTotal } from '../../../app/store/cart-slice';
+import { useEffect } from 'react';
 
 
 function Navbar() {
     const dispatch = useDispatch();
+
+    const cart = useSelector(getCartSelector);
+    const itemsCount = useSelector(getCartItemsCount);
+
+
+    useEffect(() => {
+        dispatch(getCartTotal())
+    }, [dispatch, cart])
+
 
     const {data: categories = [], isFetching, isLoading} = useGetCategoriesQuery();
         
@@ -59,7 +70,7 @@ function Navbar() {
             <div className="navbar-cart flex align-center">
                 <Link to='/cart' className='cart-btn'>
                     <i className='fa-solid fa-cart-shopping'></i>
-                    <div className="cart-items-value">0</div>
+                    <div className="cart-items-value">{itemsCount}</div>
                 </Link>
             </div>
         </div>

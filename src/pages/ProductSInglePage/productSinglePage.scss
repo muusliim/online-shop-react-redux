@@ -52,9 +52,9 @@
                         }
 
                         &:hover{
-                            border-color: $clr-orange;
+                            border-color: lighten($clr-orange, 40%);
                             img{
-                                transform: scale(0.9);
+                                transform: scale(0.8);
                             }
                         }
                     }
@@ -95,7 +95,7 @@
                             width: 28px;
                             height: 28px;
                             border: 1px solid rgba(0, 0, 0, 0.1);
-                            font-size: 13px;
+                            font-size: 1px;
                         }
                         .qty-value{
                             width: 45px;
@@ -125,7 +125,7 @@
                             text-transform: capitalize;
                         }
                         &:first-child{
-                            background-color: #FFEEE8;
+                            background-color: #fff0ea;
                             color: $clr-orange;
                         }
                         &:last-child{

@@ -3,7 +3,6 @@ import HeaderSlider from '../../features/Slider/MainSlider';
 import { useGetCategoriesQuery, useGetProductsQuery } from '../../app/api/apiSlice';
 import { Loader } from '../../features/Spinner/Spinner';
 import ProductsList from '../../features/ProductsList/ProductsList';
-import Footer from '../../features/Footer/Footer'
 
 
 
