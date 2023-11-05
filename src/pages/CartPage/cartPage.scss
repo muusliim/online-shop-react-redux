@@ -49,6 +49,10 @@
             border-bottom: 1px solid $clr-whitesmoke;
             display: grid;
             align-items: center!important;
+            img{
+                width: 120px;
+                height: 90px;
+            }
         }
         .cart-chead{
             margin-bottom: 2rem;

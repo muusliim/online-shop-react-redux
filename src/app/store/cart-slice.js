@@ -46,8 +46,9 @@ const cartSlice = createSlice({
                 storeInLocalStorage(state.cart);
             }
         },
+
         removeItemFromCart: (state, action) => {
-            const newCart = state.cart.filter(item => item !== action.payload.id);
+            let newCart = state.cart.filter(item => item.id !== action.payload);
             state.cart = newCart;
             storeInLocalStorage(state.cart);
         },
@@ -57,9 +58,10 @@ const cartSlice = createSlice({
             storeInLocalStorage(state.cart);
         },
         getCartTotal: state => {
-            state.totalAmount = state.cart.reduce((acc, sum) => {
-                return acc += sum.totalPrice
+            state.totalAmount = state.cart.reduce((cartTotal, cartItem) => {
+                return cartTotal += cartItem.totalPrice
             }, 0)
+
             state.itemsCount = state.cart.length;
         },
 
@@ -74,7 +76,7 @@ const cartSlice = createSlice({
                         if (newQty === item.stock) {
                             newQty = item.stock;
                         }
-                        newTotalPrice = newQty * item.discountePrice;
+                        newTotalPrice = newQty * item.discountedPrice;
                     }
 
                     if(action.payload.type === 'DEC') {
@@ -82,7 +84,7 @@ const cartSlice = createSlice({
                         if (newQty < 1) {
                             newQty = 1
                         }
-                        newTotalPrice = newQty * item.discountePrice;
+                        newTotalPrice = newQty * item.discountedPrice;
                     }
 
                     return {...item, quantity: newQty, totalPrice: newTotalPrice }

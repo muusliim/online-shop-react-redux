@@ -12,7 +12,7 @@ function Header() {
             <div className='header-cnt-top-l'>
               <ul className='flex align-center'>
                 <li>
-                  <Link to = "/seller">Главная</Link>
+                  <Link to = "/">Главная</Link>
                 </li>
                 <li className='vert-line'></li>
                 <li>
