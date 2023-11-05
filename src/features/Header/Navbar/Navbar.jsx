@@ -69,11 +69,11 @@ function Navbar() {
             </div>
 
             <div className="navbar-cart flex align-center">
-                <Link to='/cart' className='cart-btn'>
+                <div to='/cart' className='cart-btn'>
                     <i className='fa-solid fa-cart-shopping'></i>
                     <div className="cart-items-value">{itemsCount}</div>
                     <CartModal cart={cart}/>
-                </Link>
+                </div>
             </div>
         </div>
     </nav>
