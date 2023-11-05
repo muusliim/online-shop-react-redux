@@ -6,6 +6,7 @@ import { useGetCategoriesQuery } from '../../../app/api/apiSlice';
 import { SpinnerIcon } from '../../Spinner/Spinner';
 import { getCartItemsCount, getCartSelector, getCartTotal } from '../../../app/store/cart-slice';
 import { useEffect } from 'react';
+import CartModal from '../../CartModal/CartModal';
 
 
 function Navbar() {
@@ -71,6 +72,7 @@ function Navbar() {
                 <Link to='/cart' className='cart-btn'>
                     <i className='fa-solid fa-cart-shopping'></i>
                     <div className="cart-items-value">{itemsCount}</div>
+                    <CartModal cart={cart}/>
                 </Link>
             </div>
         </div>

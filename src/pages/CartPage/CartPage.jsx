@@ -23,8 +23,26 @@ function CartPage() {
         )
     }
 
+    const text = ['№', 'Наименование товара', 'Цена', 'Количество', 'Сумма', 'Действия'];
+
   return (
-    <div className="container my-5"></div>
+    <div className="cart bg-whitesmoke">
+        <div className="container">
+            <div className="cart-ctable">
+                <div className="cart-chead bg-white">
+                    <div className="cart-ctr fw-6 font-manrope fs-15">
+                        {text.map(item => {
+                            return (
+                                <div className='cart-cth'>
+                                    <span className='cart-ctxt'>{item}</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   )
 }
 
