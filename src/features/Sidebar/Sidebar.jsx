@@ -29,7 +29,7 @@ function Sidebar() {
                     {isFetching || isLoading ? <SpinnerIcon/> :
                         categories.map((category, i) => {
                             return (
-                             <li key={i} >
+                             <li key={i} onClick={() => dispatch(setSidebarOff())}>
                                 <Link to={`category/${category}`}
                                     className='cat-list-link text-capitalize'
                                 >

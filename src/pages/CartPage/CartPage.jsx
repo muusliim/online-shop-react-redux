@@ -2,14 +2,14 @@ import './cartPage.scss';
 import { shopping_cart } from "../../utils/img"
 import { Link } from "react-router-dom"
 import price from '../../utils/price';
-import { removeItemFromCart, clearCart, getCartTotal, toggleCartQty, getCartSelector, getCartItemsCount } from '../../app/store/cart-slice';
+import { removeItemFromCart, clearCart, toggleCartQty, getCartSelector } from '../../app/store/cart-slice';
 import { useDispatch, useSelector } from 'react-redux';
 
 
 function CartPage() {
     const dispatch = useDispatch();
     const cart = useSelector(getCartSelector);
-    const { itemsCount, totalAmount} = useSelector((state) => state.cart);
+    const { totalAmount} = useSelector((state) => state.cart);
 
     if(cart.length === 0) {
         return (
@@ -23,7 +23,7 @@ function CartPage() {
         )
     }
 
-    const text = ['№', 'Наименование товара', 'Цена', 'Количество', 'Итого', ];
+    const text = ['№', 'Наименование товара', 'Цена', 'Количество', 'Всего', ];
 
   return (
     <div className="cart bg-whitesmoke">
@@ -103,6 +103,33 @@ function CartPage() {
                                 )
                             })
                         }
+                    </div>
+                    <div className="cart-cfoot flex align-start justify-between py-3 bg-white">
+                        <div className="cart-cfool-l">
+                            <button 
+                                type='button' 
+                                className='clear-cart-btn text-danger fs-15 text-uppercase fw-4'
+                                onClick={() => dispatch(clearCart())}
+                                >
+                                    <i className='fas fa-trash'></i>
+                                    <span className='mx-1'>Очистить корзину</span>
+                            </button>
+                        </div>
+
+                        <div className="cart-cfoot-r flex-flex-clolumn justify-end">
+                            <div className="total-txt flex align-center justify-end">
+                                <div className="font manrope fw-9 fs-22 text-orange">
+                                    Итого:
+                                </div>
+                                <span className="test-orange fs-22 mx-2 fw-6">
+                                    {price(totalAmount)}
+                                </span>
+                            </div>
+
+                            <button type='button' className='btn-hover checkout-btn text-white bg-orange fs-15 text-center'>
+                                Перейти к оформлению
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

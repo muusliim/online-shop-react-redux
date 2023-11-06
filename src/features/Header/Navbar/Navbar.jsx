@@ -7,6 +7,7 @@ import { SpinnerIcon } from '../../Spinner/Spinner';
 import { getCartItemsCount, getCartSelector, getCartTotal } from '../../../app/store/cart-slice';
 import { useEffect } from 'react';
 import CartModal from '../../CartModal/CartModal';
+import { getSearchTerm, setSearchTerm } from '../../../app/store/search-slice';
 
 
 function Navbar() {
@@ -14,6 +15,13 @@ function Navbar() {
 
     const cart = useSelector(getCartSelector);
     const itemsCount = useSelector(getCartItemsCount);
+    const searchTerm = useSelector(getSearchTerm);
+
+    const handleSearchTerm = (e) => {
+        e.preventDefault();
+
+        dispatch(setSearchTerm(e.target.value));
+    }
 
 
     useEffect(() => {
@@ -46,8 +54,12 @@ function Navbar() {
             <div className="navbar-collapse w-100">
                 <div className="navbar-search bg-white">
                     <div className='flex align-center'>
-                        <input type="text" className='form-control fs-16' placeholder='Поиск' />
-                        <Link to='' className='text-white flex align-center justify-center search-btn'>
+                        <input 
+                            type="text" 
+                            className='form-control fs-16' 
+                            placeholder='Поиск'
+                            onChange={(e) => handleSearchTerm(e)} />
+                        <Link to={`search/${searchTerm}`} className='text-white flex align-center justify-center search-btn'>
                             <i className='fa-solid fa-magnifying-glass'></i>
                         </Link>
                     </div>
@@ -55,12 +67,12 @@ function Navbar() {
 
                 <ul className='navbar-nav flex align-center fs-12 fw-4 font-manrope'>
                    { isFetching || isLoading ? <SpinnerIcon/> :
-                    categories.slice(0, 8).map((item, i) => {
+                    categories.slice(0, 8).map((category, i) => {
                         return <li className='nav-item no-wrap text-capitalize' key={i}>
-                            <Link to={`category/${item}`}
+                            <Link to={`category/${category}`}
                                 className='nav-link hover-underline-animation'
                                 >
-                                    {item.replace('-', ' ')}
+                                    {category.replace('-', ' ')}
                             </Link>
                         </li>
                     })

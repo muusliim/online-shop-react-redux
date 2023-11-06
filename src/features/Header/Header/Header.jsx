@@ -16,19 +16,19 @@ function Header() {
                 </li>
                 <li className='vert-line'></li>
                 <li>
-                  <Link to = "/download">Скачать</Link>
+                  <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">Скачать</a>
                 </li>
                 <li className='vert-line'></li>
                 <li className='flex align-center'>
                   <span className='fs-13'>Соцсети</span>
                   <ul className='social-links flex align-center'>
                     <li className='mx-2'>
-                      <a href = "www.vk.com" className='fs-15'>
+                      <a href = "https://www.vk.com" target="_blank" rel="noopener noreferrer" className='fs-15'>
                         <i className='fa-brands fa-vk'></i>
                       </a>
                     </li>
                     <li className='mx-2'>
-                      <a href = "www.instagram.com" className='fs-15'>
+                      <a href = "https://www.instagram.com" target="_blank" rel="noopener noreferrer" className='fs-15'>
                         <i className='fab fa-instagram'></i>
                       </a>
                     </li>

@@ -1,14 +1,14 @@
 import './cartModal.scss';
 import { shopping_cart } from '../../utils/img';
 import price from '../../utils/price';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
 function CartModal({cart}) {
     const navigate = useNavigate();
+
   return (
-    <div className="cart-modal">
+    <div className='cart-modal'>
         <h5 className="cart-modal-title fw-6 fs-14 font-manrope text-center text-capitalize">
             Добавленные товары
         </h5>
@@ -37,10 +37,7 @@ function CartModal({cart}) {
                             )
                         })
                     }
-                    <button onClick={() => navigate('/cart')} className="view-cart-btn 
-                        bg-orange fs-15 font-manrope 
-                        text-center text-whitesmoke
-                        text-uppercase">
+                    <button onClick={() => navigate('/cart')} className='view-cart-btn bg-orange fs-15 font-manrope text-center text-whitesmoke text-uppercase'>
                         Перейти в корзину
                     </button>
                 </div>) : 
