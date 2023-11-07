@@ -47,13 +47,51 @@
         outline: 1px solid $clr-light-orange;
     }
 
+    .cart-ctxt-num{
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+
     .container{
         padding: 0;
     }
     .cart-ctable{
         min-width: 1000px;
+        @media screen and (max-width: 992px) {
+            min-width: 750px;
+        }
+        @media screen and (max-width: 768px) {
+            min-width: 560px;
+        }
+        @media screen and (max-width: 568px) {
+            min-width: 300px;
+        }
+        @media screen and (min-width: 375px) {
+            min-width: 300px;
+        }
+
         .cart-ctr{
             grid-template-columns: 1fr 4fr 2fr 2fr 2fr 2fr;
+            @media screen and (max-width: 992px) {
+                grid-template-columns: 1fr 4fr 2fr 3fr 2fr 1fr;
+            }
+            @media screen and (max-width: 768px) {
+                grid-template-columns: 0fr 3fr 2fr 2fr 2fr 0.5fr;
+                &-title{
+                    display: none;
+                }
+            @media screen and (max-width: 576px) {
+                grid-template-columns: 0.5fr 2fr 2fr 3fr 2fr 0.7fr;
+                img{
+                    display: none;
+                }
+                }
+            @media screen and (min-width: 375px) {
+                font-size: 12px;
+            }
+                
+            }
             min-height: 40px;
             border-bottom: 1px solid $clr-whitesmoke;
             display: grid;
@@ -70,6 +108,9 @@
             box-shadow: rgba(60, 64, 67, 0.01) 0px 1px 2px 0px, rgba(60, 64, 67, 0.01) 0px 1px 3px 1px;
             border-radius: 3px;
             color: rgba(0, 0, 0, 0.6);
+        @media screen and (max-width: 475px) {
+            padding: 0rem;
+        }
         }
         .cart-cbody{
             padding-right: 2rem;
@@ -78,6 +119,7 @@
             border-radius: 3px;
             font-size: 14.5px;
             color: rgba(0, 0, 0, 0.6);
+
         }
         .delete-btn{
             font-size: 14px;
@@ -104,15 +146,37 @@
             margin-top: 2rem;
             padding-right: 2rem;
             padding-left: 2rem;
+        @media screen and (max-width: 576px) {
+            button{
+                font-size: 12px;
+            }   
+            }
+
+
 
             .total-txt{
                 margin-right: -1rem;
+                @media screen and (max-width:450px){
+                    margin: 0;
+                    div{
+                        font-size: 16px;
+                    }
+                    span{
+                        font-size: 16px;
+                    }
+                }
             }
 
             .clear-cart-btn{
                 border: 1px solid $clr-danger;
                 padding: 0.7rem 1rem;
                 transition: $transition-ease;
+                @media screen and (max-width: 450px) {
+                    font-size: 12px;
+                    border:none;
+                    padding: 0;;
+                    
+                    }
 
                 &:hover{
                     background-color: $clr-danger;

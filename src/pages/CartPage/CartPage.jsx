@@ -30,7 +30,7 @@ function CartPage() {
         <div className="container">
             <div className="cart-ctable">
                 <div className="cart-chead bg-white">
-                    <div className="cart-ctr fw-6 font-manrope fs-15">
+                    <div className="cart-ctr cart-ctr-title fw-6 font-manrope fs-15">
                         {text.map((item) => {
                             return (
                                 <div className='cart-cth'
@@ -47,7 +47,7 @@ function CartPage() {
                                 return (
                                     <div className="cart-ctr py-4" key={item?.id}>
                                         <div className="cart-ctd">
-                                            <span className="cart-ctxt">
+                                            <span className="cart-ctxt-num">
                                                 {i + 1}
                                             </span>
                                         </div>
