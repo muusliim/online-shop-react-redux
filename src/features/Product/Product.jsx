@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import price from '../../utils/price';
 
 function Product({product}) {
-    console.log(product);
   return (
     <Link to={`/product/${product?.id}`} key={product?.id}>
         <div className='product-item bg-white'>
