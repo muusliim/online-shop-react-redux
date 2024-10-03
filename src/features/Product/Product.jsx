@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import price from '../../utils/price';
 
 function Product({product}) {
+    console.log(product);
   return (
     <Link to={`/product/${product?.id}`} key={product?.id}>
         <div className='product-item bg-white'>
@@ -13,7 +14,7 @@ function Product({product}) {
             <div className="product-item-info fs-14">
                 <div className="brand">
                     <span>Brand: </span>
-                    <span className='fw-7'>{product?.brand}</span>
+                    <span className='fw-7'>{product?.brand ? product?.brand : 'Unknown'}</span>
                 </div>
                 <div className="title py-2">
                     {product?.title}

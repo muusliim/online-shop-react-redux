@@ -12,7 +12,6 @@ function ProductsList({products}) {
               <Product key={product.id} product={{...product, discount}} />
             )
           })
-
         }
     </div>
   )

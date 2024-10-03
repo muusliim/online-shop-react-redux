@@ -23,11 +23,9 @@ function Navbar() {
         dispatch(setSearchTerm(e.target.value));
     }
 
-
     useEffect(() => {
         dispatch(getCartTotal())
     }, [dispatch, cart])
-
 
     const {data: categories = [], isFetching, isLoading} = useGetCategoriesQuery();
         
@@ -69,10 +67,10 @@ function Navbar() {
                    { isFetching || isLoading ? <SpinnerIcon/> :
                     categories.slice(0, 8).map((category, i) => {
                         return <li className='nav-item no-wrap text-capitalize' key={i}>
-                            <Link to={`category/${category}`}
+                            <Link to={`category/${category.slug}`}
                                 className='nav-link hover-underline-animation'
                                 >
-                                    {category.replace('-', ' ')}
+                                    {category?.name.replace('-', ' ')}
                             </Link>
                         </li>
                     })

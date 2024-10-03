@@ -20,7 +20,6 @@ function HomePage() {
       }
       rndProducts[i] = products?.products[randomIndex]
     }
-
   }
   return (
     <main>
@@ -41,12 +40,12 @@ function HomePage() {
             
             {categories.slice(0, 4).map(category => {
              return (
-                <div className="categories-item" key={category}>
+                <div className="categories-item" key={category.name}>
                 <div className="title-md" >
-                  <h3>{category}</h3>
+                  <h3>{category.name}</h3>
                 </div>
                   {isFetching || isLoading ? <Loader/> : 
-                     <ProductsList products={products?.products.filter(product => product.category === category)}/>
+                     <ProductsList products={products?.products.filter(product => product.category === category?.slug)}/>
                     }
               </div>
               )

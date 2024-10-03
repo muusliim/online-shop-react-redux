@@ -6,7 +6,9 @@ import { Loader } from '../../features/Spinner/Spinner';
 
 function CategoryProductPage() {
     const {category} = useParams();
+    console.log(category);
     const {data: products = [], isLoading, isFetching} = useGetProductsByCategoryQuery(category);
+    console.log(products);
 
   return (
     <div className="cat-products py-5 bg-whitesmoke">
@@ -17,7 +19,7 @@ function CategoryProductPage() {
                 </div>
 
                 {isLoading || isFetching ? <Loader/> : 
-                    <ProductsList products={products.products}/> 
+                    <ProductsList products={products?.products}/> 
                 }
             </div>
         </div>

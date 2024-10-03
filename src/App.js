@@ -18,10 +18,10 @@ function App() {
 
       <Routes>
         <Route path='/' element={<HomePage/>} />
-        <Route path='product/:id' element={<ProductSinglePage/>}/>
+         <Route path='product/:id' element={<ProductSinglePage/>}/>
         <Route path='cart' element={<CartPage/>}/>
         <Route path='category/:category' element={<CategoryProductPage />}/>\
-        <Route path='search/:searchTerm' element={<SearchPage/>}/>
+        <Route path='search/:searchTerm' element={<SearchPage/>}/> 
       </Routes>
   
       <Footer/>

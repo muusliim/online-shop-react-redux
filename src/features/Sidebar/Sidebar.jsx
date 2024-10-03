@@ -30,10 +30,10 @@ function Sidebar() {
                         categories.map((category, i) => {
                             return (
                              <li key={i} onClick={() => dispatch(setSidebarOff())}>
-                                <Link to={`category/${category}`}
+                                <Link to={`category/${category.slug}`}
                                     className='cat-list-link text-capitalize'
                                 >
-                                    {category.replace('-', ' ')}
+                                    {category?.name.replace('-', ' ')}
                                 </Link>
                              </li>
                             )
